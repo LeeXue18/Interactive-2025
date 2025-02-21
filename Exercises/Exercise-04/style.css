@@ -29,9 +29,9 @@ html, body {
 }
 
 p {
-  font-size: 120px;
+  font-size: 56px;
   font-weight: bold;
-  line-height: 18; 
+  line-height: 18em; 
   white-space: nowrap; 
   
 }
