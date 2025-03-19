@@ -12,7 +12,10 @@ html,body {
     text-align: center;
     height: auto;
 }
-
+/*单独文字颜色双拼部分*/
+.white-word {
+    color: #333333;
+}
 
 /* 内容区 */
 .content {
@@ -147,10 +150,6 @@ h1 {
 }
 
 
-
-
-
-
 /* 每个 section 模块 */
 .section{
     display: flex;
@@ -192,7 +191,7 @@ h1 {
 .ftxt h2 {
     font-weight: 700;
     font-size: 80px;
-    margin-bottom: 10px;
+
     line-height: 0.8;
     margin-bottom: 50px;
 }
@@ -234,15 +233,6 @@ h1 {
     color: #777;
 }
 
-.section two{
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* 让三个部分分散对齐 */
-    padding: 50px;
-    max-width: 1200px;
-    margin: 50px auto;
-    position: relative;/* 让内容之间有间隔 */
-}
 
 .wtf{
     display: flex;
@@ -256,105 +246,280 @@ h1 {
 }
 
 .spic{
-    width: 50%;
-    margin: 0 auto 0 25%;
+    width: 61%;
+    max-width: 800px; /* 限制最大宽度 */
+    margin: 0;
     position: relative;
+}
+
+.spic img {
+    width: 100%;  /* 图片跟随 .spic 的大小缩放 */
+    height: auto; /* 保持原比例 */
+    object-fit: cover; /* 确保图片填满 .spic */
+    transform: scaleX(-1);
 }
 
 .stxt {
     width: 100%;
     position: absolute;
     left: 0%;
-    top: 30%;
+    top: 10%;
     z-index: 2;
     text-align: left;
     padding: 20px;
+
+}
+
+.stxt p {
+    width: 30%;
+    font-weight: 300;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
 }
 
 
 .stxt h2{
     font-weight: 700;
     font-size: 80px;
-    margin-bottom: 10px;
     line-height: 0.8;
     margin-bottom: 50px;
 }
 
+.stxt img{
+    margin-top: 8%;
+    width: 20%;
+    height: auto; 
+    
+}
 
+.ttt{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 50px;
+    max-width: 1200px;
+    margin: 300px auto;
+    position: relative;
+    flex-direction: row-reverse;
+}
+
+.tpic{
+    width: 20%;
+    position: absolute;
+    left: 0%;
+    top: 500px;
+    z-index: 2;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.tpic img {
+    width: 100%;  
+    height: auto; 
+    object-fit: cover; 
+    padding: 5px;
+}
+
+.ttxt {
+    width: 100%;
+    position: relative;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+    text-align: left;
+    padding: 20px;
+
+}
+
+.ttxt p {
+    width: 50%;
+    font-weight: 300;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-left: 50%;
+}
+
+.fff{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 600px auto 400px auto;
+    position: relative;
+    flex-direction: row-reverse;
+}
+
+.ffpic{
+    width: 70%;
+    position: absolute;
+    left: 0%;
+    top: 500px;
+    z-index: 2;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.ffpic img {
+    align-self: flex-start;
+    width: 50%;  
+    height: auto; 
+    object-fit: cover; 
+    padding: 5px;
+}
+
+.ffpic img:first-child {
+    width: 70%; 
+}
+
+.ffpic img:last-child {
+    width: 40%; 
+}
+
+.fftxt {
+    width: 100%;
+    position: relative;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+    text-align: left;
+    padding: 20px;
+
+}
+
+.fftxt p {
+    width: 50%;
+    font-weight: 300;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-left: 50%;
+}
+
+.fftxt h2 {
+    width: 50%;
+    color: #333;
+    margin-left: 50%;
+
+    font-weight: 700;
+    font-size: 80px;
+
+    line-height: 0.8;
+    margin-bottom: 40px;
+}
+
+/*this part is from gpt but still not working*/
 @page {
-    size: 6in 4in; /* 横向打印 */
-    margin: 0.2in;
+    size: 6in 4in; /* 明信片大小 */
+    margin: 0; /* 避免边距导致裁切 */
 }
 
 @media print {
-    body {
-        font-size: 10px;
-        background-color: white; /* 避免背景颜色打印 */
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    /* ✅ 彻底移除背景 */
+    body, .content, .background, .bgimg, .bgcr {
+        background: none !important;
     }
 
-    .content {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 18px;
-        text-align: center;
-        margin: 0;
-        padding: 5px 0;
-        page-break-after: avoid;
-    }
-
-    h2 {
-        font-size: 14px !important;
-        text-align: center;
-    }
-
-    p {
-        font-size: 10px !important;
-        text-align: center;
-    }
-
-    div{
+    /* ✅ 让每个 `.section` **独立成一张明信片** */
+    .section {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        page-break-before: always !important; /* 强制分页 */
         page-break-inside: avoid !important;
     }
 
-    .video,
-    .section {
-        width: 100%;
-        height: auto;
-        page-break-inside: avoid;
-        margin-bottom: 10px;
-        padding: 0px !important;
+    /* ✅ 仅打印 `fpic, spic, tpic, ffpic` */
+    .section:not(:has(.fpic, .spic, .tpic, .ffpic)) {
+        display: none !important;
     }
 
-    /* 隐藏 iframe（YouTube 视频无法打印） */
-    iframe {
-        display: none;
-    }
-
-    /* 让图片适应打印尺寸 */
-    img {
-        max-width: 90%;
+    /* ✅ 确保 `.section` 内部不会堆叠 */
+    .fpic, .spic, .tpic, .ffpic {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
         height: 100% !important;
+        page-break-inside: avoid !important;
     }
 
-    /* 让 smalltext 靠下，排版更紧凑 */
-    .smalltext {
-        margin-top: auto;
-        font-size: 8px;
+    /* ✅ `tpic` 适当缩小，防止过大 */
+    .tpic img {
+        width: 25% !important; /* **调整大小** */
+        max-width: 35% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        align-self: center !important; /* **让它居中** */
+    }
+
+    /* ✅ 图片调整，防止丢失和堆叠 */
+    .fpic img, .spic img {
+        width: 60% !important; /* **确保图片不会太小** */
+        max-width: 70% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        align-self: center !important;
+        display: inline-block !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* ✅ **修正 `.ffpic` 不显示的问题** */
+    .ffpic {
+        display: flex !important; /* **确保 `.ffpic` 显示** */
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* ✅ **调整 `.ffpic` 图片大小，防止过小** */
+    .ffpic img {
+        width: 50% !important;
+        max-width: 50% !important; /* **放大** */
+        height: auto !important;
+        object-fit: contain !important;
+        align-self: center !important;
+        display: inline-block !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* ✅ 彻底隐藏所有 `文本`，仅打印 `图片` */
+    h1, h2, h3, p, span, .text, .smalltext, .stxt, .fftxt, .ttxt, .ftxt, .intro, iframe, .introimg {
+        display: none !important;
+    }
+
+    /* ✅ 防止图片超大 */
+    img {
+        width: auto !important;
+        max-width: 90% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        align-self: center !important;
+        display: inline-block !important;
+        page-break-inside: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    /* ✅ 确保 `section` **独立分页**，防止图片堆叠 */
+    .section {
+        page-break-before: always !important;
+        page-break-after: always !important;
     }
 }
-

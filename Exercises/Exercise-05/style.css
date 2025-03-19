@@ -67,3 +67,7 @@ button {
 button:hover {
     transform: scale(1.05);
 }
+
+.mm img{
+    width: 500px;
+   }
