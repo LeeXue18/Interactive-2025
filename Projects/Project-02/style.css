@@ -152,7 +152,6 @@ h1 {
     
 }
 
-/* h1 先出现，p 延迟 0.5s 出现 */
 .intro h1 {
     animation-delay: 0.3s;
 }
@@ -494,6 +493,7 @@ h1 {
 .hide-bg{
     display: none;
 }
+
 
 img {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
