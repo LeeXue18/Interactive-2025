@@ -1,0 +1,226 @@
+html,body{
+	height: 100%;
+    margin: 0;
+	background-color: #fdfaf6; 
+}
+
+.vase-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.vase {
+  position: relative;
+  width: 60px;
+}
+
+.neck {
+  width: 20px;
+  height: 40px;
+  background-color: #555;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.body {
+  width: 60px;
+  height: 100px;
+  background-color: #777;
+  margin: 0 auto;
+  border-radius: 30px / 60px; /* 让身体鼓起来像个瓶子 */
+  margin-top: -10px;
+}
+
+.base {
+  width: 40px;
+  height: 10px;
+  background-color: #444;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: -5px;
+}
+
+h1{
+  position: absolute;
+  top: 40px; /* 离顶部一点距离 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #333;
+  font-family: sans-serif;
+
+}
+
+.l1{
+	position: absolute;
+	top: 350px;
+	left: 740px;
+	transform: rotate(-45deg);
+	opacity: 0.8;
+}
+
+.l2{
+	position: absolute;
+	top: 310px;
+	left: 850px;
+	transform: rotate(35deg);
+	opacity: 0.8;
+}
+
+.l3{
+	position: absolute;
+	top: 250px;
+	left: 800px;
+	opacity: 0.8;
+}
+
+
+.tri {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #A8E0A3;
+
+    animation-name: no;
+	animation-duration: 4s;
+    animation-timing-function:ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: forward;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}
+
+.f1{
+	position: absolute;
+	top: 350px;
+	left: 780px;
+	opacity: 0.8;
+}
+
+.f2{
+	position: absolute;
+	top: 270px;
+	left: 760px;
+	opacity: 0.8;
+}
+
+.f3{
+	position: absolute;
+	top: 280px;
+	left: 820px;
+	opacity: 0.8;
+}
+
+.f4{
+	position: absolute;
+	top: 300px;
+	left: 800px;
+	opacity: 0.8;
+}
+
+.f5{
+	position: absolute;
+	top: 300px;
+	left: 720px;
+	opacity: 0.8;
+}
+
+.f6{
+	position: absolute;
+	top: 320px;
+	left: 750px;
+	opacity: 0.8;
+}
+
+.f7{
+	position: absolute;
+	top: 340px;
+	left: 830px;
+	opacity: 0.8;
+}
+
+.circle{
+	width: 60px;
+	height: 60px;
+	background-color: #F94343;
+	border-radius: 50px;
+	box-shadow: 20px;
+
+	animation-name: drop;
+	animation-duration: 4s;
+    animation-timing-function:ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: forward;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}
+
+.circle:hover{
+	animation-play-state: running;
+}
+
+@keyframes drop{
+    0%{
+        opacity: 0.8;
+        background-color: #F94343;
+        transform: translateY(0px) scale(1);
+
+    }
+
+   25%{
+        opacity: 0.6;
+        background-color: #F3AA7F;
+        transform: translateY(60px) scale(0.8);
+
+    }
+
+    50%{
+        opacity: 0.3;
+        background-color: #EAC977;
+        transform: translateY(140px) scale(0.4);
+
+    }
+
+    100%{
+        opacity: 0;
+        background-color: #B5AC84;
+        transform: translateY(200px) scale(0.1);
+
+    }
+}
+
+.tri:hover{
+	animation-play-state: running;
+}
+
+@keyframes no{
+    0%{
+        opacity: 0.8;
+        border-bottom: 50px solid #A8E0A3;
+
+    }
+
+   25%{
+        opacity: 0.6;
+        border-bottom: 50px solid #D3E183;
+
+    }
+
+    50%{
+        opacity: 0.4;
+        border-bottom: 50px solid #E1DC83;
+
+    }
+
+    100%{
+        opacity: 0.2;
+        border-bottom: 50px solid #A6A482;
+
+    }
+}
