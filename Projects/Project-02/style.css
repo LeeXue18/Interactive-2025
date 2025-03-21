@@ -11,6 +11,7 @@ html,body {
     line-height: 1.6;
     text-align: center;
     height: auto;
+    scroll-behavior: smooth;
 }
 /*单独文字颜色双拼部分*/
 .white-word {
