@@ -142,12 +142,14 @@ h1 {
     color: white;
 }
 
-/* 初始状态：透明 + 向下偏移 */
+
 .intro h1,
 .intro p {
     opacity: 0;
     transform: translateY(30px);
-    animation: fade 1s ease-out forwards;
+    animation: fadeInUp 1s ease-out forwards;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* h1 先出现，p 延迟 0.5s 出现 */
@@ -159,8 +161,7 @@ h1 {
     animation-delay: 0.6s;
 }
 
-/* 定义 fadeInUp 动画 */
-@keyframes fade {
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
